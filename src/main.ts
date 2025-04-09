@@ -7,7 +7,10 @@ function main() {
 
   const paintRequired = paintRequiredCalculator(area, coveragePerLiter);
 
-  console.log(`${paintRequired} is required to cover ${area} of canvas.`);
+  // Fixing string interpolation syntax
+  console.log(
+    `${paintRequired} liters are required to cover ${area} of canvas.`
+  );
 }
 
 main();
