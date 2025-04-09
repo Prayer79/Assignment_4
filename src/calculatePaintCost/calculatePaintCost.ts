@@ -1,3 +1,7 @@
-export default function calculatePaintCost(paintRequired: number, costPerLiter: number): number {
+// calculatePaintCost.ts
+export default function calculatePaintCost(
+  paintRequired: number,
+  costPerLiter: number
+): number {
   return paintRequired * costPerLiter;
 }
