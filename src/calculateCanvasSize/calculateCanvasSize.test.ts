@@ -1,3 +1,4 @@
+// calculateCanvasSize.test.ts
 import calculateCanvasSize from "./calculateCanvasSize";
 
 describe("calculateCanvasSize", () => {
@@ -7,7 +8,8 @@ describe("calculateCanvasSize", () => {
 
     const result = calculateCanvasSize(length, width);
 
-    expect(result).toBe(200); // 10 * 20 = 200
+    const expectedArea = 10 * 20 + 2 * (0.5 * (10 / 3) * 20); // Rectangle area + 2 triangles
+    expect(result).toBeCloseTo(expectedArea, 2); // Allow for small floating-point differences
   });
 
   it("should return NaN for invalid input (non-numeric)", () => {

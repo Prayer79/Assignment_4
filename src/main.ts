@@ -1,15 +1,25 @@
+// main.ts
 import calculateCanvasSize from "./calculateCanvasSize";
 import paintRequiredCalculator from "./paintRequiredCalculator";
 
 function main() {
-  const area = calculateCanvasSize("10", "20");
-  const coveragePerLiter = 11.4;
+  const length = "10"; // Example length in meters
+  const width = "20"; // Example width in meters
+  const copies = 5000; // Example number of copies
+  const coveragePerLiter = 11.4; // Coverage in square meters per liter
 
-  const paintRequired = paintRequiredCalculator(area, coveragePerLiter);
+  const area = calculateCanvasSize(length, width);
 
-  // Fixing string interpolation syntax
+  if (isNaN(area)) {
+    console.error("Invalid area calculation. Please check the input values.");
+    return;
+  }
+
+  const totalArea = area * copies; // Multiply by the number of copies
+  const paintRequired = paintRequiredCalculator(totalArea, coveragePerLiter);
+
   console.log(
-    `${paintRequired} liters are required to cover ${area} of canvas.`
+    `${paintRequired} liters are required to cover ${totalArea} square meters for ${copies} copies.`
   );
 }
 
